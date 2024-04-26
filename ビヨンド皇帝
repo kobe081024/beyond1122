@@ -4029,6 +4029,20 @@ function execCommonPart() {
 			// デッキ
 			[
 				['城トップ', facurl + '/castle.php'],
+    ['部隊戦', BASE_URL +  '/npc_expedition/?stage_category=2',
+					[
+						 ['EX1部隊戦5', BASE_URL + '/npc_expedition/index.php?stage_category=2&stage_id=2005'],
+				　　　　	 ['EX2部隊戦9', BASE_URL + '/npc_expedition/index.php?stage_category=2&stage_id=2009'],
+                         ['EX3部隊戦12', BASE_URL + '/npc_expedition/index.php?stage_category=2&stage_id=2012'],
+				],
+                 ],
+                 ['武将戦', BASE_URL +  '/npc_expedition/?stage_category=1',
+					[
+						 ['EX1武将戦7', BASE_URL + '/npc_expedition/index.php?stage_category=1&stage_id=1007'],
+				　　　　	 ['EX2武将戦15', BASE_URL + '/npc_expedition/index.php?stage_category=1&stage_id=1015'],
+                         ['EX3武将戦20', BASE_URL + '/npc_expedition/index.php?stage_category=1&stage_id=1020'],
+				],
+                 ],
 				['兵士管理', facsturl,
 					[
 						['全て', facsturl + '?type=all'], ['待機', facsturl + '?type=wait'], ['援軍先待機', facsturl + '?type=help_wait'],
