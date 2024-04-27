@@ -6558,7 +6558,7 @@ function deck_resttime_checker() {
 						"<span style='font-weight: bold; color: red;'>スキル検索結果</span>" +
 						"<input type='button' id='close_search_file' style='margin: 2px;' value='閉じる'>&nbsp;" +
 						"<div style='overflow-y: auto; max-height: 1050px;'>" +
-							"<table id='search-result' style='font-size: 7pt; display: none; margin-right: 50px;'>" +
+							"<table id='search-result' style='font-size: 15pt; display: none; margin-right: 50px;'>" +
 							"</table>" +
 						"</div>" +
 					"</div>" +
