@@ -5349,7 +5349,7 @@ function execUnionPart() {
 
 					q$("div[class^='left']", cards[i]).eq(0).append(
 						'<a href=' + BASE_URL + '/union/lvup.php?cid=' + card_id + '>' +
-							'<img style="width: 100%; cursor: pointer;" src="/GGOZoF2VKcBpHjsf47M62JjwVP4NeP4cpvhpCiO4ny0=/20240627/extend_project/w945/img/union/btn_levelupskill_mini.png" alt="ベースカードをこのカードに変更" title="ベースカードをこのカードに変更">' +
+							'<img style="width: 100%; cursor: pointer;" src="/GGOZoF2VKcBpHjsf47M62JjwVP4NeP4cpvhpCiO4ny0=/20240627-01/extend_project/w945/img/union/btn_levelupskill_mini.png" alt="ベースカードをこのカードに変更" title="ベースカードをこのカードに変更">' +
 						'</a>'
 					);
 				}
