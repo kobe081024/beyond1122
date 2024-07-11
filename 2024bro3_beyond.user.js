@@ -228,8 +228,8 @@ if (ua.indexOf("Firefox") > 0 && GM_info.version >= 4) {
 var SERVER_SCHEME = location.protocol + "//";
 var BASE_URL = SERVER_SCHEME + location.hostname;
 var SERVER_NAME = location.hostname.match(/^(.*)\.3gokushi/)[1];
-var SORT_UP_ICON = BASE_URL + "/GGOZoF2VKcBpHjsf47M62JjwVP4NeP4cpvhpCiO4ny0=/20240627-01/extend_project/w945/img/trade/icon_up.gif";
-var SORT_DOWN_ICON = BASE_URL + "/GGOZoF2VKcBpHjsf47M62JjwVP4NeP4cpvhpCiO4ny0=/20240627-01/extend_project/w945/img/trade/icon_down.gif";
+var SORT_UP_ICON = BASE_URL + "/HoREuhEsJodYTjsHP9-WlblFMSCZoixRojwwm3QiVi8=/20240711-01/extend_project/w945/img/trade/icon_up.gif";
+var SORT_DOWN_ICON = BASE_URL + "/HoREuhEsJodYTjsHP9-WlblFMSCZoixRojwwm3QiVi8=/20240711-01/extend_project/w945/img/trade/icon_down.gif";
 var AJAX_REQUEST_INTERVAL = 100; // (ms)
 //----------------------------------------------------------------------
 // 画面設定項目-保存フィールド名対応定数群
@@ -382,7 +382,7 @@ function addGlobalStyles() {
 			float: left; \
 			width: 105px; \
 			height: 7px; \
-			background-image: url('/GGOZoF2VKcBpHjsf47M62JjwVP4NeP4cpvhpCiO4ny0=/20240627-01/extend_project/w945/img/menu_mark.jpg'); \
+			background-image: url('/HoREuhEsJodYTjsHP9-WlblFMSCZoixRojwwm3QiVi8=/20240711-01/extend_project/w945/img/menu_mark.jpg'); \
 			z-index: 9902; \
 		} \
 		.menu > li a { \
@@ -2962,7 +2962,7 @@ function deckTabControl() {
 						q$("div[class='front'] span[class='status_frontback']").append(
 							"<span class='status_levelup'>" +
 								"<a href='" + BASE_URL + "/card/status_info.php?cid=" + cid + "'>" +
-									"<img src='/GGOZoF2VKcBpHjsf47M62JjwVP4NeP4cpvhpCiO4ny0=/20240627-01/extend_project/w945/img/card/common/btn_levelup.png' alt='ステータス強化' title='ステータス強化' class='levelup'>" +
+									"<img src='/HoREuhEsJodYTjsHP9-WlblFMSCZoixRojwwm3QiVi8=/20240711-01/extend_project/w945/img/card/common/btn_levelup.png' alt='ステータス強化' title='ステータス強化' class='levelup'>" +
 								"</a>" +
 							"</span>"
 						);
@@ -5350,7 +5350,7 @@ function execUnionPart() {
 
 					q$("div[class^='left']", cards[i]).eq(0).append(
 						'<a href=' + BASE_URL + '/union/lvup.php?cid=' + card_id + '>' +
-							'<img style="width: 100%; cursor: pointer;" src="/GGOZoF2VKcBpHjsf47M62JjwVP4NeP4cpvhpCiO4ny0=/20240627-01/extend_project/w945/img/union/btn_levelupskill_mini.png" alt="ベースカードをこのカードに変更" title="ベースカードをこのカードに変更">' +
+							'<img style="width: 100%; cursor: pointer;" src="/HoREuhEsJodYTjsHP9-WlblFMSCZoixRojwwm3QiVi8=/20240711-01/extend_project/w945/img/union/btn_levelupskill_mini.png" alt="ベースカードをこのカードに変更" title="ベースカードをこのカードに変更">' +
 						'</a>'
 					);
 				}
