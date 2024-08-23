@@ -228,8 +228,8 @@ if (ua.indexOf("Firefox") > 0 && GM_info.version >= 4) {
 var SERVER_SCHEME = location.protocol + "//";
 var BASE_URL = SERVER_SCHEME + location.hostname;
 var SERVER_NAME = location.hostname.match(/^(.*)\.3gokushi/)[1];
-var SORT_UP_ICON = BASE_URL + "/HoREuhEsJodYTjsHP9-WlblFMSCZoixRojwwm3QiVi8=/20240711-01/extend_project/w945/img/trade/icon_up.gif";
-var SORT_DOWN_ICON = BASE_URL + "/HoREuhEsJodYTjsHP9-WlblFMSCZoixRojwwm3QiVi8=/20240711-01/extend_project/w945/img/trade/icon_down.gif";
+var SORT_UP_ICON = BASE_URL + "/1xcbOJIAmfSxB95-LfxWyKga0TCmgldRbuncprcmrpM=/20240822-03/extend_project/w945/img/trade/icon_up.gif";
+var SORT_DOWN_ICON = BASE_URL + "/1xcbOJIAmfSxB95-LfxWyKga0TCmgldRbuncprcmrpM=/20240822-03/extend_project/w945/img/trade/icon_down.gif";
 var AJAX_REQUEST_INTERVAL = 100; // (ms)
 //----------------------------------------------------------------------
 // 画面設定項目-保存フィールド名対応定数群
@@ -382,7 +382,7 @@ function addGlobalStyles() {
 			float: left; \
 			width: 105px; \
 			height: 7px; \
-			background-image: url('/HoREuhEsJodYTjsHP9-WlblFMSCZoixRojwwm3QiVi8=/20240711-01/extend_project/w945/img/menu_mark.jpg'); \
+			background-image: url('/1xcbOJIAmfSxB95-LfxWyKga0TCmgldRbuncprcmrpM=/20240822-03/extend_project/w945/img/menu_mark.jpg'); \
 			z-index: 9902; \
 		} \
 		.menu > li a { \
@@ -2962,7 +2962,7 @@ function deckTabControl() {
 						q$("div[class='front'] span[class='status_frontback']").append(
 							"<span class='status_levelup'>" +
 								"<a href='" + BASE_URL + "/card/status_info.php?cid=" + cid + "'>" +
-									"<img src='/HoREuhEsJodYTjsHP9-WlblFMSCZoixRojwwm3QiVi8=/20240711-01/extend_project/w945/img/card/common/btn_levelup.png' alt='ステータス強化' title='ステータス強化' class='levelup'>" +
+									"<img src='/1xcbOJIAmfSxB95-LfxWyKga0TCmgldRbuncprcmrpM=/20240822-03/extend_project/w945/img/card/common/btn_levelup.png' alt='ステータス強化' title='ステータス強化' class='levelup'>" +
 								"</a>" +
 							"</span>"
 						);
@@ -4125,8 +4125,8 @@ function execCommonPart() {
 					[
 						['ファイル', BASE_URL + '/card/card_stock_file.php'],
 						['ストック', BASE_URL + '/card/card_stock.php'],
-                         ['R貂蝉', BASE_URL + '/card/card_stock.php?search_configs%5Btype%5D=1&search_configs%5Bq%5D=素材&l=&p='],
-                     ['SR', BASE_URL + '/card/card_stock.php?search_configs%5Btype%5D=0&search_configs%5Bq%5D=&card_filter%5B1%5D%5B%5D=40&l=&p='],
+                         ['特', BASE_URL + '/card/card_stock.php?search_configs%5Btype%5D=0&search_configs%5Bq%5D=&card_filter%5B6%5D%5B%5D=0&l=&p='],
+                     ['SR', BASE_URL + '/card/card_stock.php?search_configs%5Btype%5D=0&search_configs%5Bq%5D=&card_filter%5B1%5D%5B%5D=40&l=&p=&sort_configs%5B100%5D%5Bcondition%5D=26&sort_configs%5B100%5D%5Btype%5D=1'],
                     ['UR', BASE_URL + '/card/card_stock.php?search_configs%5Btype%5D=0&search_configs%5Bq%5D=&card_filter%5B1%5D%5B%5D=50&l=&p='],
                        ['L', BASE_URL + '/card/card_stock.php?search_configs%5Btype%5D=0&search_configs%5Bq%5D=&card_filter%5B1%5D%5B%5D=60&l=&p='],
                         ['SL', BASE_URL + '/card/card_stock.php?search_configs%5Btype%5D=0&search_configs%5Bq%5D=&card_filter%5B1%5D%5B%5D=70&l=&p='],
@@ -4232,7 +4232,14 @@ function execCommonPart() {
 			],
 			// アイテム
 			[
-				['便利アイテム', BASE_URL + '/item/index.php'],
+				['便利アイテム1', BASE_URL + '/item/index.php',
+                	[
+                ['便利アイテム2', BASE_URL + '/item/index.php?p=2'],
+       　　　　     ['便利アイテム3', BASE_URL + '/item/index.php?p=3'],
+            　　　 ['便利アイテム4', BASE_URL + '/item/index.php?p=4'],
+            　　　 ['便利アイテム5', BASE_URL + '/item/index.php?p=5'],
+     　　　　　　　　　　     ],
+            ],
 				['受信箱', BASE_URL + '/item/inbox.php'],
 			],
 			// 統計
@@ -4478,7 +4485,7 @@ function execCommonPart() {
 			weather_html.push(
 				'<p class="weather-ui__p--current-weather" style="' + weather_style + '">' +
 					'<span style="margin-right: 10px;">' + timeline + '</span>' +
-					'<img class="weather-icon" src="https://cdn-3gokushi.marv-games.jp/20240502-02/extend_project/w945/img/weather/icon_weather_' + weather_no + '_s.png">' +
+					'<img class="weather-icon" src="https://cdn-3gokushi.marv-games.jp/1xcbOJIAmfSxB95-LfxWyKga0TCmgldRbuncprcmrpM=/20240822-03/extend_project/w945/img/weather/icon_weather_' + weather_no + '_s.png">' +
 					'&nbsp;' +
 					'<span class="weather-name">' + weather + '</span>' +
 					effect +
@@ -5350,7 +5357,7 @@ function execUnionPart() {
 
 					q$("div[class^='left']", cards[i]).eq(0).append(
 						'<a href=' + BASE_URL + '/union/lvup.php?cid=' + card_id + '>' +
-							'<img style="width: 100%; cursor: pointer;" src="/HoREuhEsJodYTjsHP9-WlblFMSCZoixRojwwm3QiVi8=/20240711-01/extend_project/w945/img/union/btn_levelupskill_mini.png" alt="ベースカードをこのカードに変更" title="ベースカードをこのカードに変更">' +
+							'<img style="width: 100%; cursor: pointer;" src="/1xcbOJIAmfSxB95-LfxWyKga0TCmgldRbuncprcmrpM=/20240822-03/extend_project/w945/img/union/btn_levelupskill_mini.png" alt="ベースカードをこのカードに変更" title="ベースカードをこのカードに変更">' +
 						'</a>'
 					);
 				}
@@ -6706,8 +6713,8 @@ function deck_resttime_checker() {
 							var info = q$("table[class='statusParameter1'] tbody tr", cards.eq(i));
 							var clevel = q$("td", info.eq(1)).eq(0).text();
 							var cost = q$("td", info.eq(3)).eq(0).text();
-							var chp = q$("td", info.eq(5)).eq(0).text();
 							var cno = q$("td", info.eq(0)).eq(0).text();
+							var chp = q$("td", info.eq(0)).eq(0).text();
 
 							// スキル名＋回復時間
 							var info2 = q$("div[class='kaifuku_cnt']", cards.eq(i));
@@ -6811,7 +6818,7 @@ function deck_resttime_checker() {
 						var tr = "<tr>" +
 									 "<th class='tpad'>武将名</th>" +
 									 "<th class='tpad'>カードID.</th>" +
-									 "<th class='tpad'>HP</th>" +
+									 "<th class='tpad'>No</th>" +
 									 "<th class='tpad'>ｺｽﾄ</th>" +
 									 "<th class='tpad'>ラベル</th>";
 						for (var i = 0; i < maxhits; i++) {
