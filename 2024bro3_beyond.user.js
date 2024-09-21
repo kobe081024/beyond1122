@@ -228,8 +228,9 @@ if (ua.indexOf("Firefox") > 0 && GM_info.version >= 4) {
 var SERVER_SCHEME = location.protocol + "//";
 var BASE_URL = SERVER_SCHEME + location.hostname;
 var SERVER_NAME = location.hostname.match(/^(.*)\.3gokushi/)[1];
-var SORT_UP_ICON = BASE_URL + "/1xcbOJIAmfSxB95-LfxWyKga0TCmgldRbuncprcmrpM=/20240822-03/extend_project/w945/img/trade/icon_up.gif";
-var SORT_DOWN_ICON = BASE_URL + "/1xcbOJIAmfSxB95-LfxWyKga0TCmgldRbuncprcmrpM=/20240822-03/extend_project/w945/img/trade/icon_down.gif";
+var VARIABLE_DIR = "/Gn3JiiERIFGKtzINgsnym4uBGVEj1VYhnQcV6NP9YUM=/20240912-01";
+var SORT_UP_ICON = BASE_URL + VARIABLE_DIR + "/extend_project/w945/img/trade/icon_up.gif";
+var SORT_DOWN_ICON = BASE_URL + VARIABLE_DIR + "/extend_project/w945/img/trade/icon_down.gif";
 var AJAX_REQUEST_INTERVAL = 100; // (ms)
 //----------------------------------------------------------------------
 // 画面設定項目-保存フィールド名対応定数群
@@ -381,8 +382,8 @@ function addGlobalStyles() {
 		.menu > li { \
 			float: left; \
 			width: 105px; \
-			height: 7px; \
-			background-image: url('/1xcbOJIAmfSxB95-LfxWyKga0TCmgldRbuncprcmrpM=/20240822-03/extend_project/w945/img/menu_mark.jpg'); \
+			height: 5px; \
+			background-image: url('" + VARIABLE_DIR + "/extend_project/w945/img/menu_mark.jpg'); \
 			z-index: 9902; \
 		} \
 		.menu > li a { \
@@ -2962,7 +2963,7 @@ function deckTabControl() {
 						q$("div[class='front'] span[class='status_frontback']").append(
 							"<span class='status_levelup'>" +
 								"<a href='" + BASE_URL + "/card/status_info.php?cid=" + cid + "'>" +
-									"<img src='/1xcbOJIAmfSxB95-LfxWyKga0TCmgldRbuncprcmrpM=/20240822-03/extend_project/w945/img/card/common/btn_levelup.png' alt='ステータス強化' title='ステータス強化' class='levelup'>" +
+									"<img src='" + VARIABLE_DIR + "/extend_project/w945/img/card/common/btn_levelup.png' alt='ステータス強化' title='ステータス強化' class='levelup'>" +
 								"</a>" +
 							"</span>"
 						);
@@ -4485,7 +4486,7 @@ function execCommonPart() {
 			weather_html.push(
 				'<p class="weather-ui__p--current-weather" style="' + weather_style + '">' +
 					'<span style="margin-right: 10px;">' + timeline + '</span>' +
-					'<img class="weather-icon" src="https://cdn-3gokushi.marv-games.jp/1xcbOJIAmfSxB95-LfxWyKga0TCmgldRbuncprcmrpM=/20240822-03/extend_project/w945/img/weather/icon_weather_' + weather_no + '_s.png">' +
+					'<img class="weather-icon" src="https://cdn-3gokushi.marv-games.jp' + VARIABLE_DIR + '/extend_project/w945/img/weather/icon_weather_' + weather_no + '_s.png">' +
 					'&nbsp;' +
 					'<span class="weather-name">' + weather + '</span>' +
 					effect +
@@ -5357,7 +5358,7 @@ function execUnionPart() {
 
 					q$("div[class^='left']", cards[i]).eq(0).append(
 						'<a href=' + BASE_URL + '/union/lvup.php?cid=' + card_id + '>' +
-							'<img style="width: 100%; cursor: pointer;" src="/1xcbOJIAmfSxB95-LfxWyKga0TCmgldRbuncprcmrpM=/20240822-03/extend_project/w945/img/union/btn_levelupskill_mini.png" alt="ベースカードをこのカードに変更" title="ベースカードをこのカードに変更">' +
+							'<img style="width: 90%; cursor: pointer;" src="' + VARIABLE_DIR + '/extend_project/w945/img/union/btn_levelupskill_mini.png" alt="ベースカードをこのカードに変更" title="ベースカードをこのカードに変更">' +
 						'</a>'
 					);
 				}
@@ -8241,7 +8242,7 @@ function addSkillViewOnSmallCardDeck(is_draw_passive, is_draw_use_link, is_draw_
 										q$(this).html("<span class='skb'>[使用]</span>");
 										return;
 									}
-									var vacant_cost = (villages[0].village_id === parseInt(village_id, 10)) ? domesticMainVacantCost : domesticSubVacantCost;
+									var vacant_cost = (villages[0].village_id === parseInt(village_id, 10) || village_info.village_name.slice(0,3) === "城壁塔") ? domesticMainVacantCost : domesticSubVacantCost;
 									if (card_cost > vacant_cost) {
 										alert(`${village_info.village_name}の空きコストが不足しています`);
 										q$(this).parent().children('td').html(recover_html);
@@ -8251,7 +8252,8 @@ function addSkillViewOnSmallCardDeck(is_draw_passive, is_draw_use_link, is_draw_
 
 									// 使用スキルの取得
 									var use_skill = q$(this).parent().children('td').text().replace(/[ \t\r\n]/g, "").replace(/\(T\)/, '');
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　var skill_info = getSkillInfo(use_skill, q$('div.set a.control__button--deck-set-small', elembase).attr('href'));
+
+									var skill_info = getSkillInfo(use_skill, q$('div.set a.control__button--deck-set-small', elembase).attr('href'));
 									var skill_id = skill_info.skill_id;
 									var card_id = skill_info.card_id;
 
