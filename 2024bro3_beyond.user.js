@@ -2138,7 +2138,9 @@ function mapTabControl() {
 					postdata['radio_reserve_type'] = 0;
 					postdata['card_id'] = 204;
 					postdata['btn_send'] = '出兵';
-                  if (location.search.includes("deck_mode")) postdata['deck_mode'] = 2;
+                  if (location.search.includes("deck_mode")) {
+                      postdata['deck_mode'] = 2;
+                      }
 
 					// 出兵処理
 					var wait = false;
@@ -5230,7 +5232,6 @@ function execUnionPart() {
 										continue;
 									}
 
-									
 
 									// 素材IDを取得
 									var match = q$("div[id*='cardWindow_']", cards[i]).attr('id').match(/cardWindow_([0-9].*)/);
