@@ -2967,7 +2967,7 @@ function deckTabControl() {
 						q$("div[class='front'] span[class='status_frontback']").append(
 							"<span class='status_levelup'>" +
 								"<a href='" + BASE_URL + "/card/status_info.php?cid=" + cid + "'>" +
-									"<img src='" + VARIABLE_DIR + "/extend_project/w945/img/card/common/btn_levelup.png' alt='ステータス強化' title='ステータス強化' class='levelup'>" +
+									"<img src='" + IMG_SRC_BASE_PATH + "card/common/btn_levelup.png' alt='ステータス強化' title='ステータス強化' class='levelup'>" +
 								"</a>" +
 							"</span>"
 						);
@@ -4133,6 +4133,7 @@ function execCommonPart() {
 					[
 						['ファイル', BASE_URL + '/card/card_stock_file.php'],
 						['ストック', BASE_URL + '/card/card_stock.php'],
+                        ['スキル検索', BASE_URL + '/card/card_stock.php?search_configs%5Btype%5D=1&search_configs%5Bq%5D=&l=&p='],
                          ['特', BASE_URL + '/card/card_stock.php?search_configs%5Btype%5D=0&search_configs%5Bq%5D=&card_filter%5B6%5D%5B%5D=0&l=&p='],
                      ['SR', BASE_URL + '/card/card_stock.php?search_configs%5Btype%5D=0&search_configs%5Bq%5D=&card_filter%5B1%5D%5B%5D=40&l=&p=&sort_configs%5B100%5D%5Bcondition%5D=26&sort_configs%5B100%5D%5Btype%5D=1'],
                     ['UR', BASE_URL + '/card/card_stock.php?search_configs%5Btype%5D=0&search_configs%5Bq%5D=&card_filter%5B1%5D%5B%5D=50&l=&p='],
@@ -8054,13 +8055,16 @@ function addSkillViewOnSmallCardDeck(is_draw_passive, is_draw_use_link, is_draw_
 		// 回復スキルは最初に見つかった通常拠点で発動させればよい。空きコスト大きいほうでよい
 		var mainVacantId = 0;
 		var subVacantId = 0;
+        var isMainFound = false;
+		var isSubFound = false;
 		q$.each(villages, function() {
 			if (this.isset_domestic === false) { // 内政官不在
-				if (villages[0] === this) {
+				if (isMainFound === false && this.deck_kind === 1) {
 					mainVacantId = this.village_id;
-				} else {
+				isMainFound = true;
+				} else if (isSubFound === false) {
 					subVacantId = this.village_id;
-					return false;
+					isSubFound = true;
 				}
 			}
 		});
@@ -8249,7 +8253,7 @@ function addSkillViewOnSmallCardDeck(is_draw_passive, is_draw_use_link, is_draw_
 										q$(this).html("<span class='skb'>[使用]</span>");
 										return;
 									}
-									var vacant_cost = (villages[0].village_id === parseInt(village_id, 10) || village_info.village_name.slice(0,3) === "城壁塔") ? domesticMainVacantCost : domesticSubVacantCost;
+									var vacant_cost = (village_info.deck_kind === 1) ? domesticMainVacantCost : domesticSubVacantCost;
 									if (card_cost > vacant_cost) {
 										alert(`${village_info.village_name}の空きコストが不足しています`);
 										q$(this).parent().children('td').html(recover_html);
@@ -10386,7 +10390,7 @@ function getDefaultOptions() {
 	settings[COMMON_01] = true;		// 資源タイマー
 	settings[COMMON_02] = true;		// プルダウンメニューを差し替える
 	settings[COMMON_03] = true;		// 天気予告常時表示
-//settings[COMMON_04] = true;		// 地形1.0 (2024年時点ですべての鯖導入済のため削除)
+	//settings[COMMON_04] = true;		// 地形1.0 (2024年時点ですべての鯖導入済のため削除)
 
 	// プロフィール
 	settings[PROFILE_01] = true;	// ランキングのリンク追加
@@ -10437,7 +10441,7 @@ function getDefaultOptions() {
 	settings[DECK_1D] = false;		// デッキ：援軍武将を1クリックで撤退させるボタンを追加
 	settings[DECK_21] = true;		// 領地一覧：領地一覧の並び方を初期状態に戻す
 	settings[DECK_22] = true;		// 領地一覧：「新領地」で始まる領地を全て破棄
-   	settings[DECK_23] = true;		// 領地一覧：領地LVUP時のアラートを抑制
+	settings[DECK_23] = true;		// 領地一覧：領地LVUP時のアラートを抑制
 	settings[DECK_31] = true;		// 修行合成でレベルが上がった時に、レベルアップボタンを追加
 	settings[DECK_32] = true;		// 自動スキルレベルアップ合成機能を追加
 	settings[DECK_33] = true;		// スキルレベルアップ合成画面でベースカードの交換機能を追加
@@ -10445,7 +10449,7 @@ function getDefaultOptions() {
 	settings[DECK_35] = true;		// 自動副将枠解放合成機能を追加
 	settings[DECK_51] = true;		// 兵士管理リンクをクリックした際の初期タブを「全て表示」にする
 	settings[DECK_61] = false;		// スキル3つ以上、レベル50、スコア100万のいずれかに該当するカードを倉庫へ移動できなくする
-    settings[DECK_71] = true;		// 倉庫からファイルに移動する画面へ一括ラベル機能を追加
+	settings[DECK_71] = true;		// 倉庫からファイルに移動する画面へ一括ラベル機能を追加
 
 	// 報告書
 	settings[REPORT_01] = true;		// 自動整形機能の追加
