@@ -40,6 +40,7 @@ var waitInterval = 1500;
 var wantCardNos = [
 	1007,
     10019,
+	10173,
     10020,
     10063,
     10029,
