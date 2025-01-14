@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name		busyodasライトでcだけ残す
+// @name		ライトでcだけ残す
 // @namespace	https://gist.github.com/RAPT21/
 // @description	ブラウザ三国志 ブショーダス補助 by RAPT kobe編集
 // @include		https://*.3gokushi.jp/busyodas/busyodas_continuty_result.php*
