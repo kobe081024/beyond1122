@@ -7,8 +7,8 @@
 // @require		https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
 // @connect		3gokushi.jp
 // @grant		none
-// @author		RAPT
-// @version 	0.4
+// @author		RAPT/kobe
+// @version 	0.5
 // ==/UserScript==
 jQuery.noConflict();
 q$ = jQuery;
