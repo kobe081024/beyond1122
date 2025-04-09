@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name		bro3_beyond1
-// @namespace	bro3_beyond1
+// @name		bro3_beyond
+// @namespace	        bro3_beyond
 // @include		https://*.3gokushi.jp/*
 // @include		http://*.3gokushi.jp/*
 // @description	ブラウザ三国志beyondリメイク by Craford 氏 with RAPT
